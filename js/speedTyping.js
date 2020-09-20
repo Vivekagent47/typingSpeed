@@ -1,13 +1,3 @@
-/**
-* @package     speedTyping 
-* @author      Awran5 <github.com/awran5>
-* @version     1.0.0
-* @license     under MIT <https://github.com/awran5/speedTyping/blob/master/LICENSE>
-* @copyright   © 2018 Awran5. All rights reserved.
-* @see         <github.com/speedTyping>
-* 
-*/
-
 // Shorthand for querySelectors
 const select    = e => document.querySelector(e);
 const selectAll = e => document.querySelectorAll(e);
