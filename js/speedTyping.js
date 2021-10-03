@@ -9,9 +9,7 @@ const inputFull     = select('#textFull');
 // Counters
 const _timer        = select('#timer');
 const _wpm          = select('#wpm');
-const _cpm          = select('#cpm');
 const _errors       = select('#errors');
-const _accuracy     = select('#accuracy');
 const _totalWords   = select('#totalWords');
 const _writtenWords = select('#writtenWords');
 // Modal
@@ -190,16 +188,11 @@ class speedTyping {
                 //const rawcpm  = Math.floor(this.index / this.seconds * 60);
                 // CPM counter
                 this.cpm = this.correctIndex > 5 ? Math.floor(this.correctIndex / this.duration * 60) : 0;
-                // Add to the dom
-                _cpm.textContent = this.cpm;
                 // WPM: (correct chars / total time * 60 / 5)
                 this.wpm = Math.round(this.cpm / 5);
                 _wpm.textContent = this.wpm;
                 // Accuracy: (Correct chars * 100 / total index)
                 this.accuracyIndex = this.correctIndex > 5 ? Math.round((this.correctIndex * 100) / this.index) : 0;
-                // Add accuracy to the dom. We need to check it because division by 0 give us a special values (infinity, NaN)
-                if (this.accuracyIndex > 0 && Number.isInteger(this.accuracyIndex)) 
-                    _accuracy.innerHTML = `${this.accuracyIndex}<span class="small">%</span>`;
 
             });
         }
